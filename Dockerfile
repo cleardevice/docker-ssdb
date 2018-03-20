@@ -14,12 +14,12 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
 \
     mkdir -p /ssdb/conf /ssdb/data && \
-    touch /ssdb/conf/log.txt && ln -sf /dev/stdout /ssdb/conf/log.txt && \
     cp /ssdb/ssdb.conf /ssdb/conf && \
     sed \
       -e 's@work_dir = .*@work_dir = /ssdb/data@' \
       -e 's@pidfile = .*@pidfile = /run/ssdb.pid@' \
       -e 's@level:.*@level: info@' \
+      -e 's@output:.*@output: stdout@' \
       -e 's@ip:.*@ip: 0.0.0.0@' \
       -i /ssdb/conf/ssdb.conf
 

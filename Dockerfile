@@ -2,9 +2,9 @@ FROM ubuntu:16.04
 MAINTAINER cd <cleardevice@gmail.com>
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
-    apt-get install -y nano git make g++ autoconf && \
+    apt-get install -y nano git make g++ autoconf python && \
 \
-    git clone https://github.com/ideawu/ssdb.git /tmp/ssdb --depth 1 && \
+    git clone https://github.com/ideawu/ssdb.git /tmp/ssdb -b dev --depth 1 && \
     cd /tmp/ssdb && make && make install && \
     mv /usr/local/ssdb /ssdb && \
 \

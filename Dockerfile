@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 MAINTAINER cd <cleardevice@gmail.com>
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && \

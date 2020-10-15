@@ -1,7 +1,7 @@
 FROM ubuntu:20.04
 MAINTAINER cd <cleardevice@gmail.com>
 
-ENV SSDB_VERSION=1.9.7
+ENV SSDB_VERSION=1.9.9
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
     apt-get install -y nano git make g++ autoconf python && \
 \
